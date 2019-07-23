@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.3.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.3.000" expanded="true" name="Process" origin="GENERATED_TUTORIAL">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="9.3.000" expanded="true" height="68" name="Testing Set" origin="GENERATED_TUTORIAL" width="90" x="581" y="187">
+        <parameter key="repository_entry" value="../data/Linq4j"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.3.000" expanded="true" height="68" name="Retrieve Charts4j" width="90" x="45" y="136">
+        <parameter key="repository_entry" value="../data/Charts4j"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.3.000" expanded="true" height="68" name="Retrieve CommonCodec" width="90" x="45" y="238">
+        <parameter key="repository_entry" value="../data/CommonCodec"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.3.000" expanded="true" height="68" name="Retrieve Jtar" width="90" x="45" y="340">
+        <parameter key="repository_entry" value="../data/Jtar"/>
+      </operator>
+      <operator activated="true" class="union" compatibility="9.3.000" expanded="true" height="82" name="Union" width="90" x="179" y="187"/>
+      <operator activated="true" class="retrieve" compatibility="9.3.000" expanded="true" height="68" name="Retrieve Parsii" width="90" x="45" y="442">
+        <parameter key="repository_entry" value="../data/Parsii"/>
+      </operator>
+      <operator activated="true" class="union" compatibility="9.3.000" expanded="true" height="82" name="Union (2)" width="90" x="179" y="391"/>
+      <operator activated="true" class="union" compatibility="9.3.000" expanded="true" height="82" name="Union (3)" width="90" x="313" y="289"/>
+      <operator activated="true" class="retrieve" compatibility="9.3.000" expanded="true" height="68" name="Retrieve Calendar" width="90" x="45" y="544">
+        <parameter key="repository_entry" value="../data/Calendar"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.3.000" expanded="true" height="68" name="Retrieve Day" width="90" x="45" y="646">
+        <parameter key="repository_entry" value="../data/Day"/>
+      </operator>
+      <operator activated="true" class="union" compatibility="9.3.000" expanded="true" height="82" name="Union (4)" width="90" x="179" y="595"/>
+      <operator activated="true" class="retrieve" compatibility="9.3.000" expanded="true" height="68" name="Retrieve MergeSort" width="90" x="313" y="544">
+        <parameter key="repository_entry" value="../data/MergeSort"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.3.000" expanded="true" height="68" name="Retrieve Profit" width="90" x="313" y="646">
+        <parameter key="repository_entry" value="../data/Profit"/>
+      </operator>
+      <operator activated="true" class="union" compatibility="9.3.000" expanded="true" height="82" name="Union (5)" width="90" x="447" y="595"/>
+      <operator activated="true" class="union" compatibility="9.3.000" expanded="true" height="82" name="Union (6)" width="90" x="313" y="391"/>
+      <operator activated="true" class="union" compatibility="9.3.000" expanded="true" height="82" name="Union (7)" width="90" x="447" y="340"/>
+      <operator activated="true" class="retrieve" compatibility="9.3.000" expanded="true" height="68" name="Retrieve PrimeNumber" width="90" x="447" y="442">
+        <parameter key="repository_entry" value="../data/PrimeNumber"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="9.3.000" expanded="true" height="82" name="Set Role (2)" width="90" x="715" y="187">
+        <parameter key="attribute_name" value="op"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles"/>
+      </operator>
+      <operator activated="true" class="union" compatibility="9.3.000" expanded="true" height="82" name="Union (8)" width="90" x="581" y="391"/>
+      <operator activated="true" class="set_role" compatibility="9.3.000" expanded="true" height="82" name="Set Role" width="90" x="313" y="34">
+        <parameter key="attribute_name" value="op"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles"/>
+      </operator>
+      <operator activated="true" class="operator_toolbox:smote" compatibility="2.0.001" expanded="true" height="82" name="SMOTE Upsampling" width="90" x="447" y="34">
+        <parameter key="number_of_neighbours" value="2"/>
+        <parameter key="normalize" value="true"/>
+        <parameter key="equalize_classes" value="false"/>
+        <parameter key="upsampling_size" value="1000"/>
+        <parameter key="auto_detect_minority_class" value="false"/>
+        <parameter key="minority_class" value="equ"/>
+        <parameter key="round_integers" value="false"/>
+        <parameter key="nominal_change_rate" value="1.0"/>
+        <parameter key="use_local_random_seed" value="true"/>
+        <parameter key="local_random_seed" value="1992"/>
+      </operator>
+      <operator activated="true" class="h2o:gradient_boosted_trees" compatibility="9.2.000" expanded="true" height="103" name="Gradient Boosted Trees" width="90" x="581" y="34">
+        <parameter key="number_of_trees" value="200"/>
+        <parameter key="reproducible" value="true"/>
+        <parameter key="maximum_number_of_threads" value="12"/>
+        <parameter key="use_local_random_seed" value="true"/>
+        <parameter key="local_random_seed" value="1992"/>
+        <parameter key="maximal_depth" value="10"/>
+        <parameter key="min_rows" value="10.0"/>
+        <parameter key="min_split_improvement" value="0.001"/>
+        <parameter key="number_of_bins" value="10"/>
+        <parameter key="learning_rate" value="0.01"/>
+        <parameter key="sample_rate" value="0.5"/>
+        <parameter key="distribution" value="AUTO"/>
+        <parameter key="early_stopping" value="false"/>
+        <parameter key="stopping_rounds" value="1"/>
+        <parameter key="stopping_metric" value="AUTO"/>
+        <parameter key="stopping_tolerance" value="0.001"/>
+        <parameter key="max_runtime_seconds" value="0"/>
+        <list key="expert_parameters"/>
+      </operator>
+      <operator activated="true" class="apply_model" compatibility="9.3.000" expanded="true" height="82" name="Apply Model" width="90" x="715" y="34">
+        <list key="application_parameters"/>
+        <parameter key="create_view" value="false"/>
+      </operator>
+      <operator activated="true" class="operator_toolbox:performance_auprc" compatibility="2.0.001" expanded="true" height="82" name="Performance (AUPRC)" width="90" x="849" y="34">
+        <parameter key="main_criterion" value="AUPRC"/>
+        <parameter key="accuracy" value="false"/>
+        <parameter key="AUC" value="false"/>
+        <parameter key="AUPRC" value="true"/>
+        <parameter key="skip_undefined_labels" value="false"/>
+        <parameter key="use_example_weights" value="false"/>
+      </operator>
+      <operator activated="true" class="performance_binominal_classification" compatibility="9.3.000" expanded="true" height="82" name="Performance" width="90" x="849" y="187">
+        <parameter key="manually_set_positive_class" value="false"/>
+        <parameter key="main_criterion" value="kappa"/>
+        <parameter key="accuracy" value="true"/>
+        <parameter key="classification_error" value="true"/>
+        <parameter key="kappa" value="true"/>
+        <parameter key="AUC (optimistic)" value="false"/>
+        <parameter key="AUC" value="false"/>
+        <parameter key="AUC (pessimistic)" value="false"/>
+        <parameter key="precision" value="false"/>
+        <parameter key="recall" value="false"/>
+        <parameter key="lift" value="false"/>
+        <parameter key="fallout" value="false"/>
+        <parameter key="f_measure" value="true"/>
+        <parameter key="false_positive" value="false"/>
+        <parameter key="false_negative" value="false"/>
+        <parameter key="true_positive" value="false"/>
+        <parameter key="true_negative" value="false"/>
+        <parameter key="sensitivity" value="false"/>
+        <parameter key="specificity" value="false"/>
+        <parameter key="youden" value="false"/>
+        <parameter key="positive_predictive_value" value="false"/>
+        <parameter key="negative_predictive_value" value="false"/>
+        <parameter key="psep" value="false"/>
+        <parameter key="skip_undefined_labels" value="false"/>
+        <parameter key="use_example_weights" value="false"/>
+      </operator>
+      <operator activated="true" class="performance_classification" compatibility="9.3.000" expanded="true" height="82" name="Performance (2)" width="90" x="849" y="340">
+        <parameter key="main_criterion" value="absolute_error"/>
+        <parameter key="accuracy" value="false"/>
+        <parameter key="classification_error" value="false"/>
+        <parameter key="kappa" value="false"/>
+        <parameter key="weighted_mean_recall" value="false"/>
+        <parameter key="weighted_mean_precision" value="false"/>
+        <parameter key="spearman_rho" value="false"/>
+        <parameter key="kendall_tau" value="false"/>
+        <parameter key="absolute_error" value="true"/>
+        <parameter key="relative_error" value="false"/>
+        <parameter key="relative_error_lenient" value="false"/>
+        <parameter key="relative_error_strict" value="false"/>
+        <parameter key="normalized_absolute_error" value="false"/>
+        <parameter key="root_mean_squared_error" value="false"/>
+        <parameter key="root_relative_squared_error" value="false"/>
+        <parameter key="squared_error" value="false"/>
+        <parameter key="correlation" value="false"/>
+        <parameter key="squared_correlation" value="false"/>
+        <parameter key="cross-entropy" value="false"/>
+        <parameter key="margin" value="false"/>
+        <parameter key="soft_margin_loss" value="false"/>
+        <parameter key="logistic_loss" value="false"/>
+        <parameter key="skip_undefined_labels" value="false"/>
+        <parameter key="use_example_weights" value="false"/>
+        <list key="class_weights"/>
+      </operator>
+      <connect from_op="Testing Set" from_port="output" to_op="Set Role (2)" to_port="example set input"/>
+      <connect from_op="Retrieve Charts4j" from_port="output" to_op="Union" to_port="example set 1"/>
+      <connect from_op="Retrieve CommonCodec" from_port="output" to_op="Union" to_port="example set 2"/>
+      <connect from_op="Retrieve Jtar" from_port="output" to_op="Union (2)" to_port="example set 1"/>
+      <connect from_op="Union" from_port="union" to_op="Union (3)" to_port="example set 1"/>
+      <connect from_op="Retrieve Parsii" from_port="output" to_op="Union (2)" to_port="example set 2"/>
+      <connect from_op="Union (2)" from_port="union" to_op="Union (3)" to_port="example set 2"/>
+      <connect from_op="Union (3)" from_port="union" to_op="Union (7)" to_port="example set 1"/>
+      <connect from_op="Retrieve Calendar" from_port="output" to_op="Union (4)" to_port="example set 1"/>
+      <connect from_op="Retrieve Day" from_port="output" to_op="Union (4)" to_port="example set 2"/>
+      <connect from_op="Union (4)" from_port="union" to_op="Union (6)" to_port="example set 1"/>
+      <connect from_op="Retrieve MergeSort" from_port="output" to_op="Union (5)" to_port="example set 1"/>
+      <connect from_op="Retrieve Profit" from_port="output" to_op="Union (5)" to_port="example set 2"/>
+      <connect from_op="Union (5)" from_port="union" to_op="Union (6)" to_port="example set 2"/>
+      <connect from_op="Union (6)" from_port="union" to_op="Union (7)" to_port="example set 2"/>
+      <connect from_op="Union (7)" from_port="union" to_op="Union (8)" to_port="example set 1"/>
+      <connect from_op="Retrieve PrimeNumber" from_port="output" to_op="Union (8)" to_port="example set 2"/>
+      <connect from_op="Set Role (2)" from_port="example set output" to_op="Apply Model" to_port="unlabelled data"/>
+      <connect from_op="Union (8)" from_port="union" to_op="Set Role" to_port="example set input"/>
+      <connect from_op="Set Role" from_port="example set output" to_op="SMOTE Upsampling" to_port="exa"/>
+      <connect from_op="SMOTE Upsampling" from_port="ups" to_op="Gradient Boosted Trees" to_port="training set"/>
+      <connect from_op="Gradient Boosted Trees" from_port="model" to_op="Apply Model" to_port="model"/>
+      <connect from_op="Apply Model" from_port="labelled data" to_op="Performance (AUPRC)" to_port="labelled data"/>
+      <connect from_op="Performance (AUPRC)" from_port="performance" to_port="result 1"/>
+      <connect from_op="Performance (AUPRC)" from_port="example set" to_op="Performance" to_port="labelled data"/>
+      <connect from_op="Performance" from_port="performance" to_port="result 2"/>
+      <connect from_op="Performance" from_port="example set" to_op="Performance (2)" to_port="labelled data"/>
+      <connect from_op="Performance (2)" from_port="performance" to_port="result 3"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+      <portSpacing port="sink_result 4" spacing="0"/>
+    </process>
+  </operator>
+</process>
